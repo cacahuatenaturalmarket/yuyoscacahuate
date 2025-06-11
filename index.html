@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Yuyos Medicinales - CACAHUATE NATURAL MARKET</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Paleta de Colores de CACAHUATE NATURAL MARKET - ¡Adaptada para Dark Mode! */
+        :root {
+            --fondo-oscuro: #1A1A1A;            /* Fondo muy oscuro para el modo oscuro */
+            --fondo-claro-secundario: #282828;  /* Fondo sutilmente más claro para main */
+            --fondo-tarjeta: #2F2F2F;           /* Fondo de tarjeta un poco más claro */
+            --texto-claro: #E0E0E0;             /* Texto principal claro */
+            --azul-terroso: #8EBFC3;            /* Azul/Teal para acentos (más brillante para contraste) */
+            --azul-terroso-claro: #C2E2DA;      /* Azul/Teal más claro (más brillante para contraste) */
+            --marron-oscuro-texto: #A0A0A0;     /* Gris medio para descripciones y texto secundario */
+            --blanco-puro: #FFFFFF;             /* Blanco puro, usado para recuadros de fotos */
+            --naranja-cacahuate: #FF8C00;       /* Naranja para títulos y elementos principales */
+        }
+
+        /* Estilos Generales */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--fondo-oscuro);
+            color: var(--texto-claro);
+            line-height: 1.6;
+            transition: background-color 0.5s ease;
+        }
+
+        /* Cabecera */
+        header {
+            background-image: url('https://i.imgur.com/BCGbBgz.jpeg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            position: relative;
+            color: var(--blanco-puro);
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        /* Capa semitransparente sobre la imagen de fondo */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Opacidad al 70% para buen balance */
+            z-index: -1;
+        }
+        
+        .logo-container {
+            max-width: 250px;
+            max-height: 250px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: transparent;
+            overflow: visible;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 0;
+            /* Aplicación de filter: drop-shadow para intentar "eliminar" el recuadro */
+            filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.8)); /* Sombra que sigue la forma del logo */
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .logo-container img:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0px 0px 10px rgba(255,140,0,0.7)); /* Sombra naranja al hover */
+        }
+
+
+        /* Contenedor Principal de Yuyos */
+        main {
+            padding: 50px 40px;
+            max-width: 1400px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            background-color: var(--fondo-claro-secundario);
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        }
+
+        /* Sección de Título, Eslogan y Contacto */
+        #info-principal-catalogo {
+            background-color: var(--fondo-oscuro);
+            padding: 50px 30px;
+            text-align: center;
+            max-width: 1400px;
+            margin: 0px auto 40px auto;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            position: relative;
+            z-index: 0;
+        }
+
+        #info-principal-catalogo h1 {
+            font-family: 'Merriweather', serif;
+            margin: 0 0 20px 0;
+            font-size: 3.8em;
+            color: var(--naranja-cacahuate);
+            letter-spacing: 0.08em;
+            text-shadow: 0 0 10px rgba(255,140,0,0.5);
+            transition: color 0.3s ease;
+        }
+        #info-principal-catalogo h1:hover {
+            color: var(--blanco-puro);
+        }
+
+
+        #info-principal-catalogo p {
+            margin: 15px auto;
+            font-size: 1.2em;
+            color: var(--naranja-cacahuate);
+            max-width: 1000px;
+            line-height: 1.8;
+            font-weight: 400;
+            text-shadow: 0 0 5px rgba(255,140,0,0.3);
+            transition: color 0.3s ease;
+        }
+        #info-principal-catalogo p:hover {
+             color: var(--azul-terroso-claro);
+        }
+
+        #info-principal-catalogo .contact-info-section { 
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-top: 35px;
+            color: var(--naranja-cacahuate);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #info-principal-catalogo .contact-info-section .fab {
+            color: var(--naranja-cacahuate);
+            margin-right: 12px;
+            font-size: 1.5em;
+            transition: transform 0.3s ease-out, color 0.3s ease;
+        }
+
+        #info-principal-catalogo .contact-info-section a {
+            color: var(--naranja-cacahuate);
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        #info-principal-catalogo .contact-info-section a:hover {
+            color: var(--blanco-puro);
+            transform: scale(1.05);
+        }
+        #info-principal-catalogo .contact-info-section .fab:hover {
+            transform: scale(1.2);
+            color: var(--azul-terroso-claro);
+        }
+
+        /* Estilo de la Tarjeta de Yuyo */
+        .yuyo-card {
+            background-color: var(--fondo-tarjeta);
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            overflow: hidden;
+            text-align: left;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(var(--azul-terroso-claro), 0.1);
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 25px;
+        }
+
+        .yuyo-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+        }
+
+        .yuyo-card .image-wrapper {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(var(--marron-oscuro-texto), 0.1);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--blanco-puro); /* RECUADRO DE FOTO BLANCO */
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .yuyo-card:hover .image-wrapper {
+            background-color: #F0F0F0;
+        }
+
+        .yuyo-card .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 25px;
+            box-sizing: border-box;
+            border-bottom: none;
+            border-radius: 15px;
+            filter: brightness(1);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .yuyo-card:hover .image-wrapper img {
+             transform: scale(1.05);
+             filter: brightness(0.98);
+        }
+
+        .yuyo-card-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .yuyo-card h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--naranja-cacahuate);
+            margin-top: 0;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            letter-spacing: 0.03em;
+            text-shadow: 0 0 5px rgba(255,140,0,0.3);
+        }
+
+        .yuyo-card p {
+            font-size: 1.05em;
+            color: var(--marron-oscuro-texto);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .yuyo-card .description {
+            font-weight: 300;
+            color: var(--marron-oscuro-texto);
+            font-size: 1em;
+        }
+
+        /* Estilos del Modal (Lightbox) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.98);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 95%;
+            max-height: 95%;
+            border-radius: 15px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.9);
+            object-fit: contain;
+            cursor: zoom-in;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), border 0.3s ease;
+        }
+
+        .modal-content.zoomed {
+            max-width: none;
+            max-height: none;
+            object-fit: initial;
+            cursor: grab;
+            border: 3px solid var(--naranja-cacahuate);
+        }
+
+        .close-button {
+            position: absolute;
+            top: 25px;
+            right: 45px;
+            color: #f1f1f1;
+            font-size: 56px;
+            font-weight: bold;
+            transition: transform 0.3s ease, color 0.3s ease;
+            cursor: pointer;
+            z-index: 1001;
+            text-shadow: 0 0 10px rgba(0,0,0,0.7);
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: var(--azul-terroso-claro);
+            transform: scale(1.1);
+        }
+
+        /* Pie de Página */
+        footer {
+            background-color: #252525;
+            color: var(--texto-claro);
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+            box-shadow: 0 -6px 15px rgba(0,0,0,0.4);
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 1em;
+            font-weight: 300;
+        }
+
+        footer .contact-info-footer {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--naranja-cacahuate);
+        }
+
+        footer .contact-info-footer .fab {
+            color: var(--naranja-cacahuate);
+            margin-left: 10px;
+            margin-right: 5px;
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+        footer .contact-info-footer a {
+            color: var(--naranja-cacahuate);
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        footer .contact-info-footer a:hover {
+            color: var(--blanco-puro);
+            transform: scale(1.05);
+        }
+        footer .contact-info-footer .fab:hover {
+            transform: scale(1.2);
+            color: var(--azul-terroso-claro);
+        }
+
+
+        /* Media Queries para Responsividad */
+        @media (max-width: 1024px) {
+            main {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 35px;
+                padding: 40px 30px;
+            }
+            .yuyo-card .image-wrapper {
+                height: 200px;
+            }
+            .yuyo-card h3 {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #info-principal-catalogo h1 {
+                font-size: 3em;
+                margin-bottom: 15px;
+            }
+            #info-principal-catalogo p {
+                font-size: 1.05em;
+                margin-bottom: 10px;
+            }
+            #info-principal-catalogo .contact-info-section {
+                font-size: 1.1em;
+                margin-top: 20px;
+            }
+
+            .logo-container {
+                max-width: 180px;
+                max-height: 180px;
+                padding: 0;
+            }
+
+            main {
+                grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+                padding: 25px;
+                gap: 30px;
+            }
+
+            .yuyo-card .image-wrapper {
+                height: 180px;
+            }
+            .yuyo-card-content {
+                padding: 20px;
+            }
+            .yuyo-card h3 {
+                font-size: 1.8em;
+                margin-bottom: 10px;
+            }
+            .yuyo-card p {
+                font-size: 0.95em;
+                margin-bottom: 15px;
+            }
+
+            .modal-content {
+                max-width: 95%;
+                max-height: 95%;
+            }
+
+            .close-button {
+                font-size: 40px;
+                top: 15px;
+                right: 25px;
+            }
+
+            footer {
+                padding: 25px 0;
+                margin-top: 40px;
+            }
+            footer p {
+                font-size: 0.9em;
+            }
+            footer .contact-info-footer {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #info-principal-catalogo h1 {
+                font-size: 2.2em;
+                letter-spacing: 0.05em;
+            }
+            #info-principal-catalogo p {
+                font-size: 0.95em;
+                line-height: 1.6;
+            }
+            #info-principal-catalogo .contact-info-section {
+                font-size: 1em;
+            }
+            .contact-info-section .fab {
+                font-size: 1.2em;
+            }
+            .logo-container {
+                max-width: 150px;
+                max-height: 150px;
+            }
+            .yuyo-card .image-wrapper {
+                height: 150px;
+            }
+            .yuyo-card h3 {
+                font-size: 1.5em;
+            }
+            .yuyo-card p {
+                font-size: 0.9em;
+            }
+            .close-button {
+                font-size: 35px;
+                top: 10px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://i.imgur.com/C9IK8QO.png" alt="Logo de CACAHUATE NATURAL MARKET">
+        </div>
+    </header>
+
+    <section id="info-principal-catalogo">
+        <h1>Catálogo de Yuyos Medicinales</h1>
+        <p>Descubre el poder de la naturaleza con los yuyos que te ofrece CACAHUATE MARKET, tu destino para el bienestar natural esta aqui en Coronel D' Elia 2039.</p>
+        <p class="contact-info-section">
+            ¡Contáctanos! <i class="fab fa-whatsapp"></i> <a href="https://wa.me/5491133974550" target="_blank" style="color: var(--naranja-cacahuate); text-decoration: none;">1133974550</a>
+        </p>
+    </section>
+
+    <main>
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/MvSuS6g.jpeg"> 
+                <img src="https://i.imgur.com/MvSuS6g.jpeg" alt="Imagen de Alcachofa">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Alcachofa</h3>
+                <p class="description">Principalmente digestiva y hepatoprotectora, favorece la función del hígado y la vesícula biliar.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/LJZxJ5R.jpeg"> 
+                <img src="https://i.imgur.com/LJZxJ5R.jpeg" alt="Imagen de Altamisa">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Altamisa</h3>
+                <p class="description">Utilizada tradicionalmente como digestiva, antiespasmódica y para aliviar dolores menstruales.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/kQhHLET.jpeg"> 
+                <img src="https://i.imgur.com/kQhHLET.jpeg" alt="Imagen de Ambay">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Ambay</h3>
+                <p class="description">Expectorante y antitusígeno, ideal para afecciones respiratorias como tos, asma y bronquitis.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/0TQbrFW.jpeg"> 
+                <img src="https://i.imgur.com/0TQbrFW.jpeg" alt="Imagen de Arenaria">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Arenaria</h3>
+                <p class="description">Conocida por sus propiedades diuréticas, útil en problemas de retención de líquidos y vías urinarias.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/a0r917s.jpeg"> 
+                <img src="https://i.imgur.com/a0r917s.jpeg" alt="Imagen de Baila Bien">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Baila Bien</h3>
+                <p class="description">Vigorizante y estimulante, se usa para combatir el agotamiento físico y nervioso, y como afrodisíaco.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/9HGEU8T.jpeg"> 
+                <img src="https://i.imgur.com/9HGEU8T.jpeg" alt="Imagen de Boldo">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Boldo</h3>
+                <p class="description">Potente digestivo y hepatoprotector, ayuda en disfunciones hepáticas, digestiones lentas y cálculos biliares.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/oThUBiJ.jpeg"> 
+                <img src="https://i.imgur.com/oThUBiJ.jpeg" alt="Imagen de Burrito">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Burrito</h3>
+                <p class="description">Reconocido por sus propiedades digestivas, sedantes y ansiolíticas, alivia el "empacho" y el nerviosismo.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/cFrDRWi.jpeg"> 
+                <img src="https://i.imgur.com/cFrDRWi.jpeg" alt="Imagen de Caléndula">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Caléndula</h3>
+                <p class="description">Antiinflamatoria, cicatrizante y antiséptica, útil para heridas, quemaduras e irritaciones cutáneas.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/GlNKdGC.jpeg"> 
+                <img src="https://i.imgur.com/GlNKdGC.jpeg" alt="Imagen de Carqueja">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Carqueja</h3>
+                <p class="description">Hepatoprotectora y digestiva, recomendada para problemas hepáticos, digestiones pesadas y como depurativo.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/L6Yll80.jpeg"> 
+                <img src="https://i.imgur.com/L6Yll80.jpeg" alt="Imagen de Cedrón">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Cedrón</h3>
+                <p class="description">Antiinflamatorio, antiespasmódico y digestivo, alivia dolores estomacales, cólicos y nerviosismo.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/OyoFT4s.jpeg"> 
+                <img src="https://i.imgur.com/OyoFT4s.jpeg" alt="Imagen de Centella Asiática">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Centella Asiática</h3>
+                <p class="description">Reconocida por sus propiedades cicatrizantes, regeneradoras y circulatorias, usada para heridas, varices y celulitis.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/IISa6Xa.jpeg"> 
+                <img src="https://i.imgur.com/IISa6Xa.jpeg" alt="Imagen de Cola de Caballo">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Cola de Caballo</h3>
+                <p class="description">Diurética y remineralizante, ayuda en la retención de líquidos, infecciones urinarias y fortalece huesos y cabello.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/gW3BXNh.jpeg"> 
+                <img src="https://i.imgur.com/gW3BXNh.jpeg" alt="Imagen de Congorosa">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Congorosa</h3>
+                <p class="description">Protectora gástrica y cicatrizante, muy usada para úlceras estomacales, gastritis y como antiinflamatorio.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/OxTuXVb.jpeg"> 
+                <img src="https://i.imgur.com/OxTuXVb.jpeg" alt="Imagen de Diente de León">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Diente de León</h3>
+                <p class="description">Gran depurativo hepático y renal, diurético y digestivo, favorece la eliminación de toxinas.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/JtLDve2.jpeg"> 
+                <img src="https://i.imgur.com/JtLDve2.jpeg" alt="Imagen de Doradilla">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Doradilla</h3>
+                <p class="description">Diurética y refrescante, utilizada para afecciones renales y urinarias, y para combatir la sed.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/72635ph.jpeg"> <img src="https://i.imgur.com/72635ph.jpeg" alt="Imagen de Duraznillo">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Duraznillo</h3>
+                <p class="description">Tradicionalmente usado como digestivo y para problemas de la piel.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/2VNDIxw.jpeg"> 
+                <img src="https://i.imgur.com/2VNDIxw.jpeg" alt="Imagen de Eucalipto">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Eucalipto</h3>
+                <p class="description">Expectorante, antiséptico y descongestionante, esencial para aliviar resfriados, gripe, tos y bronquitis.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/fvZGmiK.jpeg"> 
+                <img src="https://i.imgur.com/fvZGmiK.jpeg" alt="Imagen de Estragón">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Estragón</h3>
+                <p class="description">Además de su uso culinario, tiene propiedades digestivas y ayuda en casos de inapetencia.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/dmYbNoH.jpeg"> 
+                <img src="https://i.imgur.com/dmYbNoH.jpeg" alt="Imagen de Harina de Vino">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Harina de Vino</h3>
+                <p class="description">Rica en nutrientes, antioxidantes y utilizada como complemento para la salud digestiva y cardiovascular.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/qhTrxmY.jpeg"> 
+                <img src="https://i.imgur.com/qhTrxmY.jpeg" alt="Imagen de Hierba de Pollo">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Hierba de Pollo</h3>
+                <p class="description">Diurética y depurativa, se usa para afecciones urinarias y para eliminar toxinas.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/0Aq6Rm3.jpeg"> 
+                <img src="https://i.imgur.com/0Aq6Rm3.jpeg" alt="Imagen de Yerba Dulce">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Hierba dulce o Stevia (Yerba Dulce)</h3>
+                <p class="description">Endulzante natural y digestiva, ayuda a aliviar malestares estomacales.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/mz7HzBL.jpeg"> 
+                <img src="https://i.imgur.com/mz7HzBL.jpeg" alt="Imagen de Hibiscus o Flor de Jamaica">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Hibiscus o Flor de Jamaica</h3>
+                <p class="description">Diurética, hipotensora y antioxidante, ayuda a reducir la presión arterial y es refrescante.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/nAkUVji.jpeg"> 
+                <img src="https://i.imgur.com/nAkUVji.jpeg" alt="Imagen de Hisopo">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Hisopo</h3>
+                <p class="description">Expectorante, antiséptico y antitusígeno, útil para afecciones respiratorias como la tos y el catarro.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/yMdbSVV.jpeg"> 
+                <img src="https://i.imgur.com/yMdbSVV.jpeg" alt="Imagen de Incayuyo">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Incayuyo</h3>
+                <p class="description">Digestivo y antiinflamatorio, especialmente para problemas gastrointestinales y hepáticos.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/8LF6fWj.png"> 
+                <img src="https://i.imgur.com/8LF6fWj.png" alt="Imagen de Lapacho">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Lapacho</h3>
+                <p class="description">Inmunoestimulante, antiinflamatorio y analgésico, usado para fortalecer las defensas y aliviar dolores.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/mP82TAL.jpeg"> 
+                <img src="https://i.imgur.com/mP82TAL.jpeg" alt="Imagen de Laurel">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Laurel</h3>
+                <p class="description">Digestivo, carminativo y antiespasmódico, alivia gases, indigestión y espasmos gastrointestinales.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/lbmmTHo.jpeg"> 
+                <img src="https://i.imgur.com/lbmmTHo.jpeg" alt="Imagen de Llantén">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Llantén</h3>
+                <p class="description">Antiinflamatorio, cicatrizante y expectorante, útil para heridas, picaduras y afecciones respiratorias.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/Y1uo5aD.jpeg"> 
+                <img src="https://i.imgur.com/Y1uo5aD.jpeg" alt="Imagen de Malva">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Malva</h3>
+                <p class="description">Antiinflamatoria, emoliente y laxante suave, calma irritaciones de garganta y digestivas, y favorece el tránsito intestinal.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/X0qfPfG.jpeg"> 
+                <img src="https://i.imgur.com/X0qfPfG.jpeg" alt="Imagen de Melissa">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Melissa (Melisa o Toronjil)</h3>
+                <p class="description">Sedante, ansiolítica y antiespasmódica, ideal para nerviosismo, insomnio y problemas digestivos de origen nervioso.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/t3Scr9p.jpeg"> 
+                <img src="https://i.imgur.com/t3Scr9p.jpeg" alt="Imagen de Menta">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Menta (Menta Peperina)</h3>
+                <p class="description">Digestiva, carminativa y analgésica, alivia náuseas, gases, indigestión y dolores de cabeza.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/uzD40NV.jpeg"> 
+                <img src="https://i.imgur.com/uzD40NV.jpeg" alt="Imagen de Moringa">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Moringa</h3>
+                <p class="description">Rico en nutrientes, antioxidantes y utilizado como complemento para la salud digestiva y cardiovascular.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/9uJBjJo.jpeg"> 
+                <img src="https://i.imgur.com/9uJBjJo.jpeg" alt="Imagen de Muérdago">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Muérdago</h3>
+                <p class="description">Hipotensor y diurético, utilizado con precaución para bajar la presión arterial y retención de líquidos.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/IBAfp4k.jpeg"> 
+                <img src="https://i.imgur.com/IBAfp4k.jpeg" alt="Imagen de Muña Muña">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Muña Muña</h3>
+                <p class="description">Digestiva, carminativa y antimicrobiana, alivia indigestión, gases y problemas intestinales.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/rzpJIRJ.jpeg"> 
+                <img src="https://i.imgur.com/rzpJIRJ.jpeg" alt="Imagen de Ortiga">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Ortiga</h3>
+                <p class="description">Diurética, depurativa, antiinflamatoria y remineralizante, usada para afecciones urinarias, articulares y anemia.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/9HgboKd.jpeg"> 
+                <img src="https://i.imgur.com/9HgboKd.jpeg" alt="Imagen de Palo Azul">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Palo Azul</h3>
+                <p class="description">Diurético, antilitiásico (previene cálculos renales) y antiinflamatorio, ayuda a limpiar los riñones.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/p8mITMh.jpeg"> 
+                <img src="https://i.imgur.com/p8mITMh.jpeg" alt="Imagen de Pasionaria">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Pasionaria (Flor de Mburucuyá)</h3>
+                <p class="description">Sedante y ansiolítica, muy efectiva para el insomnio, nerviosismo, ansiedad y estrés.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/x5sqiFn.jpeg"> 
+                <img src="https://i.imgur.com/x5sqiFn.jpeg" alt="Imagen de Pezuña de vaca">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Pezuña de vaca</h3>
+                <p class="description">Hipoglucemiante, utilizada tradicionalmente para ayudar a controlar los niveles de azúcar en sangre en diabéticos.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/NKEsz8C.png"> 
+                <img src="https://i.imgur.com/NKEsz8C.png" alt="Imagen de Poleo">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Poleo</h3>
+                <p class="description">Digestivo, carminativo, antiespasmódico y emenagogo (estimula la menstruación).</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/vW5zqTJ.jpeg"> 
+                <img src="https://i.imgur.com/vW5zqTJ.jpeg" alt="Imagen de Pulmonaria">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Pulmonaria</h3>
+                <p class="description">Expectorante y emoliente, ideal para afecciones respiratorias como bronquitis, tos y catarros.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/Fexsvhu.jpeg"> 
+                <img src="https://i.imgur.com/Fexsvhu.jpeg" alt="Imagen de Romero">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Romero</h3>
+                <p class="description">Antioxidante, digestivo, estimulante circulatorio y tónico mental, mejora la memoria y la concentración.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/AMu4jHX.jpeg"> 
+                <img src="https://i.imgur.com/AMu4jHX.jpeg" alt="Imagen de Romerillo">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Romerillo</h3>
+                <p class="description">Antiinflamatorio y digestivo, útil para aliviar dolores y problemas gastrointestinales.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/KnVBKrA.jpeg"> 
+                <img src="https://i.imgur.com/KnVBKrA.jpeg" alt="Imagen de Rompe Piedra">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Rompe Piedra (Chanca Piedra)</h3>
+                <p class="description">Diurética y litolítica, tradicionalmente usada para ayudar a disolver y expulsar cálculos renales y biliares.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/gTOE6Tr.jpeg"> 
+                <img src="https://i.imgur.com/gTOE6Tr.jpeg" alt="Imagen de Ruda">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Ruda</h3>
+                <p class="description">Antiespasmódica, emenagoga y digestiva, usada con precaución para cólicos y problemas menstruales.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/kcieWtE.jpeg"> 
+                <img src="https://i.imgur.com/kcieWtE.jpeg" alt="Imagen de Salvia">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Salvia</h3>
+                <p class="description">Antiséptica, antiviral, antiinflamatoria, antioxidante y digestiva, útil para inflamaciones de garganta, problemas digestivos y sudoración excesiva.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/ITrjv9e.jpeg"> 
+                <img src="https://i.imgur.com/ITrjv9e.jpeg" alt="Imagen de Té Negro">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Té Negro</h3>
+                <p class="description">Estimulante (cafeína), antioxidante y cardioprotector, mejora el estado de alerta y la salud cardiovascular.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/DeBt08r.jpeg"> 
+                <img src="https://i.imgur.com/DeBt08r.jpeg" alt="Imagen de Té Rojo">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Té Rojo</h3>
+                <p class="description">Antioxidante, digestivo y quemagrasas, ayuda en la digestión de grasas y el control del peso.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/6w1gKvT.jpeg"> 
+                <img src="https://i.imgur.com/6w1gKvT.jpeg" alt="Imagen de Té Verde">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Té Verde</h3>
+                <p class="description">Antioxidante, diurético y protector cardiovascular, ayuda a regular el colesterol y prevenir enfermedades.</p>
+            </div>
+        </div>
+        
+        <div class="yuyo-card">
+            <div class="image-wrapper" data-src-large="https://i.imgur.com/ZDWzufn.jpeg"> 
+                <img src="https://i.imgur.com/ZDWzufn.jpeg" alt="Imagen de Verbena">
+            </div>
+            <div class="yuyo-card-content">
+                <h3>Verbena</h3>
+                <p class="description">Planta con propiedades digestivas, sedantes y antiinflamatorias.</p>
+            </div>
+        </div>
+
+        </main>
+
+    <footer>
+        <p class="contact-info-footer">
+            ¡Contáctanos! <i class="fab fa-whatsapp"></i> <a href="https://wa.me/5491133974550" target="_blank" style="color: var(--naranja-cacahuate); text-decoration: none;">1133974550</a>
+        </p>
+        <p>En CACAHUATE NATURAL MARKET, creemos en el poder de la naturaleza para tu bienestar.</p>
+        <p>© 2025 CACAHUATE NATURAL MARKET. Todos los derechos reservados.</p>
+    </footer>
+
+    <div id="imageModal" class="modal">
+        <span class="close-button">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // Get the modal, the image inside it, and the close button
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("img01");
+        var span = document.getElementsByClassName("close-button")[0];
+
+        // Get all image wrappers in the catalog
+        var imageWrappers = document.querySelectorAll(".yuyo-card .image-wrapper");
+
+        // Panning state variables
+        let isZoomed = false; // Tracks if the image is currently zoomed
+        let isDragging = false; // Tracks if the image is being dragged
+        let startX, startY, currentX, currentY, offsetX = 0, offsetY = 0; // For panning calculations
+        let currentScale = 1.0; // Initial scale for scroll wheel zoom
+
+        // Loop through all image wrappers and add the click event to open modal
+        imageWrappers.forEach(function(wrapper) {
+            wrapper.onclick = function() {
+                console.log('Clicked card image. Opening modal.');
+                modal.style.display = "flex"; // Show the modal
+                modalImg.src = this.getAttribute("data-src-large") || this.querySelector('img').src;
+
+                // Reset zoom state when a new image is opened
+                isZoomed = false;
+                currentScale = 1.0; // Reset scale
+                modalImg.classList.remove('zoomed');
+                modalImg.style.transform = 'translate(0px, 0px) scale(1.0)'; // Reset pan and scale
+                modalImg.style.cursor = 'zoom-in'; // Set initial cursor
+                offsetX = 0; // Reset offsets
+                offsetY = 0;
+            }
+        });
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            console.log('Closing modal via X button.');
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the image (on the dark background), close the modal
+        modal.onclick = function(event) {
+            // Only close if clicking on the modal background itself, not the image
+            if (event.target == modal) {
+                console.log('Closing modal via background click.');
+                modal.style.display = "none";
+            }
+        }
+
+        // Click handler for the image inside the modal to toggle zoom
+        modalImg.addEventListener('dblclick', function(e) { // CAMBIO: Ahora es dblclick
+            e.stopPropagation(); // Prevent modal from closing if double-clicking on image
+            console.log('Double-clicked image inside modal. Toggling zoom.');
+
+            isZoomed = !isZoomed; // Toggle zoom state
+
+            if (isZoomed) {
+                currentScale = 2.0; // Zoom al doble al hacer doble click
+                modalImg.classList.add('zoomed');
+                modalImg.style.cursor = 'grab'; // Change cursor to grab when zoomed
+                modalImg.style.transform = `translate(0px, 0px) scale(${currentScale})`; // Apply zoom
+            } else {
+                currentScale = 1.0; // Reset scale
+                modalImg.classList.remove('zoomed');
+                modalImg.style.transform = 'translate(0px, 0px) scale(1.0)'; // Reset pan and scale
+                modalImg.style.cursor = 'zoom-in'; // Reset cursor
+                offsetX = 0; // Reset offsets on zoom out
+                offsetY = 0;
+            }
+            console.log('isZoomed:', isZoomed, 'currentScale:', currentScale);
+        });
+
+        // Wheel (scroll) event for zooming
+        modalImg.addEventListener('wheel', function(e) {
+            e.preventDefault(); // Prevent page scroll
+
+            const scaleAmount = 0.1; // How much to zoom per scroll tick
+            const maxScale = 3.0; // Maximum zoom level
+            const minScale = 0.8; // Minimum zoom level (can go slightly smaller than 1)
+
+            // Determine zoom direction
+            if (e.deltaY < 0) { // Scroll up (zoom in)
+                currentScale += scaleAmount;
+            } else { // Scroll down (zoom out)
+                currentScale -= scaleAmount;
+            }
+
+            // Clamp scale within limits
+            currentScale = Math.max(minScale, Math.min(maxScale, currentScale));
+
+            // Apply scale
+            modalImg.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${currentScale})`;
+
+            // Update zoomed state based on scale
+            if (currentScale > 1.0) {
+                isZoomed = true;
+                modalImg.classList.add('zoomed');
+                modalImg.style.cursor = 'grab';
+            } else {
+                isZoomed = false;
+                modalImg.classList.remove('zoomed');
+                modalImg.style.transform = 'translate(0px, 0px) scale(1.0)'; // Reset to default view
+                modalImg.style.cursor = 'zoom-in';
+                offsetX = 0; // Reset offsets when fully zoomed out
+                offsetY = 0;
+            }
+            console.log('Wheel event. currentScale:', currentScale);
+        });
+
+
+        // Panning logic (mousedown, mousemove, mouseup)
+        modalImg.addEventListener('mousedown', function(e) {
+            if (isZoomed) {
+                console.log('Mouse down on zoomed image. Starting drag.');
+                isDragging = true;
+                modalImg.style.cursor = 'grabbing';
+                // Get current transform values if already panned
+                const transform = window.getComputedStyle(modalImg).transform;
+                let matrix = new DOMMatrixReadOnly(transform);
+                offsetX = matrix.m41; // Get current X translation
+                offsetY = matrix.m42; // Get current Y translation
+
+                startX = e.clientX - offsetX;
+                startY = e.clientY - offsetY;
+            }
+        });
+
+        modalImg.addEventListener('mousemove', function(e) {
+            if (isDragging && isZoomed) {
+                e.preventDefault(); // Prevent text selection/default drag behavior
+                currentX = e.clientX - startX;
+                currentY = e.clientY - startY;
+                modalImg.style.transform = `translate(${currentX}px, ${currentY}px) scale(${currentScale})`; // Apply pan AND current scale
+                // Update offsets so next drag starts from current position
+                offsetX = currentX;
+                offsetY = currentY;
+                // console.log(`Dragging to: ${currentX}, ${currentY}`); // Too verbose for general use
+            }
+        });
+
+        modalImg.addEventListener('mouseup', function() {
+            if (isDragging) {
+                console.log('Mouse up. Stopping drag.');
+                isDragging = false;
+                if (isZoomed) { // Ensure cursor is grab only if still zoomed
+                    modalImg.style.cursor = 'grab';
+                }
+            }
+        });
+
+        modalImg.addEventListener('mouseleave', function() { // Stop dragging if mouse leaves image area
+            if (isDragging) {
+                console.log('Mouse leave. Stopping drag.');
+                isDragging = false;
+                // Don't change cursor if still technically zoomed, but not dragging
+                if (isZoomed) {
+                    modalImg.style.cursor = 'grab';
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
