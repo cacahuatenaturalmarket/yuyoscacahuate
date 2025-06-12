@@ -12,12 +12,12 @@
             --fondo-oscuro: #1A1A1A;            /* Fondo muy oscuro para el modo oscuro */
             --fondo-claro-secundario: #282828;  /* Fondo sutilmente más claro para main */
             --fondo-tarjeta: #2F2F2F;           /* Fondo de tarjeta un poco más claro */
-            --texto-claro: #E0E0E0;             /* Texto principal claro */
+            --texto-claro: #F8F8F8;             /* AJUSTADO: Texto principal más blanco */
             --azul-terroso: #8EBFC3;            /* Azul/Teal para acentos (más brillante para contraste) */
             --azul-terroso-claro: #C2E2DA;      /* Azul/Teal más claro (más brillante para contraste) */
-            --marron-oscuro-texto: #A0A0A0;     /* Gris medio para descripciones y texto secundario */
+            --marron-oscuro-texto: #C0C0C0;     /* AJUSTADO: Gris más claro para descripciones */
             --blanco-puro: #FFFFFF;             /* Blanco puro, usado para recuadros de fotos */
-            --naranja-cacahuate: #FF8C00;       /* Naranja para títulos y elementos principales */
+            --naranja-cacahuate: #FFC107;       /* AJUSTADO: Naranja amarillento para títulos y elementos principales */
         }
 
         /* Estilos Generales */
@@ -33,7 +33,7 @@
 
         /* Cabecera */
         header {
-            background-image: url('https://i.imgur.com/BCGbBgz.jpeg'); 
+            background-image: url('https://i.imgur.com/BCGbBgz.jpeg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
@@ -46,7 +46,7 @@
             overflow: hidden;
         }
 
-        /* Capa semitransparente sobre la imagen de fondo */
+        /* Capa semitransparente sobre la imagen de fondo: Opacidad reducida para más luminosidad */
         header::before {
             content: '';
             position: absolute;
@@ -54,13 +54,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Opacidad al 70% para buen balance */
+            background-color: rgba(0, 0, 0, 0.4); /* Opacidad reducida al 40% */
             z-index: -1;
         }
         
         .logo-container {
-            max-width: 250px;
-            max-height: 250px;
+            max-width: 300px;
+            max-height: 300px;
             margin: 20px auto;
             display: flex;
             justify-content: center;
@@ -69,8 +69,8 @@
             z-index: 2;
             padding: 0;
             box-sizing: border-box;
-            background-color: transparent;
-            overflow: visible;
+            background-color: transparent; /* Fondo transparente para el contenedor */
+            overflow: visible; /* Asegura que el logo no se corte */
         }
 
         .logo-container img {
@@ -78,13 +78,11 @@
             max-height: 100%;
             object-fit: contain;
             border-radius: 0;
-            /* Aplicación de filter: drop-shadow para intentar "eliminar" el recuadro */
-            filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.8)); /* Sombra que sigue la forma del logo */
-            transition: transform 0.3s ease, filter 0.3s ease;
+            transition: transform 0.3s ease, filter 0.3s ease; /* Transición para efectos de hover */
         }
         .logo-container img:hover {
             transform: scale(1.05);
-            filter: drop-shadow(0px 0px 10px rgba(255,140,0,0.7)); /* Sombra naranja al hover */
+            filter: brightness(1.2) saturate(1.2); /* Restaurado: efecto de luminosidad y saturación */
         }
 
 
@@ -147,35 +145,88 @@
             font-size: 1.4em;
             font-weight: 700;
             margin-top: 35px;
-            color: var(--naranja-cacahuate);
+            color: var(--naranja-cacahuate); /* Color inicial del texto y el icono */
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 8px; /* Espacio entre los elementos */
+        }
+
+        #info-principal-catalogo .contact-info-section .contact-text {
+            margin-right: 0;
         }
 
         #info-principal-catalogo .contact-info-section .fab {
             color: var(--naranja-cacahuate);
-            margin-right: 12px;
             font-size: 1.5em;
-            transition: transform 0.3s ease-out, color 0.3s ease;
+            transition: transform 0.3s ease-out, color 0.3s ease; /* Transición del icono de WhatsApp */
         }
 
         #info-principal-catalogo .contact-info-section a {
-            color: var(--naranja-cacahuate);
+            color: var(--naranja-cacahuate); /* Color inicial del enlace */
             text-decoration: none;
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease; /* Asegura la transición del filtro */
             font-weight: 700;
             letter-spacing: 0.03em;
         }
 
         #info-principal-catalogo .contact-info-section a:hover {
-            color: var(--blanco-puro);
+            color: var(--blanco-puro); /* Cambia a blanco al pasar el ratón */
             transform: scale(1.05);
+            filter: brightness(1.2) saturate(1.2); /* Restaurado: efecto de luminosidad y saturación */
         }
         #info-principal-catalogo .contact-info-section .fab:hover {
             transform: scale(1.2);
             color: var(--azul-terroso-claro);
         }
+
+        /* Barra de Búsqueda */
+        .search-bar-container {
+            background-color: var(--fondo-claro-secundario);
+            padding: 25px 20px;
+            max-width: 1000px; /* Ancho máximo para la barra */
+            margin: 40px auto 20px auto; /* Espacio antes y después de la barra */
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(var(--texto-claro), 0.1);
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease; /* Añadida transición */
+        }
+
+        .search-bar-container:hover { /* Efecto al pasar el ratón */
+            transform: translateY(-5px); /* Un ligero levantamiento */
+            box-shadow: 0 8px 15px rgba(0,0,0,0.4); /* Sombra más pronunciada */
+        }
+
+        .search-bar-container i {
+            color: var(--naranja-cacahuate);
+            font-size: 1.6em;
+            margin-right: 15px;
+        }
+
+        .search-bar-container input {
+            flex-grow: 1; /* Ocupa el espacio disponible */
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            background-color: #3A3A3A; /* Fondo del input más claro */
+            color: var(--texto-claro);
+            outline: none; /* Elimina el borde de enfoque por defecto */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .search-bar-container input::placeholder {
+            color: var(--marron-oscuro-texto);
+            opacity: 0.7;
+        }
+
+        .search-bar-container input:focus {
+            background-color: #4A4A4A; /* Fondo más claro al enfocar */
+            box-shadow: 0 0 0 3px var(--naranja-cacahuate); /* Borde de enfoque naranja */
+        }
+
 
         /* Estilo de la Tarjeta de Yuyo */
         .yuyo-card {
@@ -184,11 +235,16 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
             overflow: hidden;
             text-align: left;
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease;
             border: 1px solid rgba(var(--azul-terroso-claro), 0.1);
             display: flex;
             flex-direction: column;
             padding-bottom: 25px;
+        }
+
+        .yuyo-card.hidden {
+            display: none;
+            opacity: 0;
         }
 
         .yuyo-card:hover {
@@ -205,7 +261,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: var(--blanco-puro); /* RECUADRO DE FOTO BLANCO */
+            background-color: var(--blanco-puro);
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             transition: background-color 0.3s ease;
@@ -336,28 +392,36 @@
             font-weight: 300;
         }
 
+        /* CONTACTO FOOTER - AJUSTES PARA ALINEACIÓN CÉNTRICA Y ESPACIO */
         footer .contact-info-footer {
             font-size: 1.2em;
             font-weight: 600;
             margin-bottom: 20px;
             color: var(--naranja-cacahuate);
+            display: flex; /* Usamos flexbox para alinear los elementos */
+            justify-content: center;
+            align-items: center; /* Centra verticalmente */
+            gap: 8px; /* Espacio entre los elementos */
+        }
+
+        footer .contact-info-footer .contact-text {
+            margin-right: 0;
         }
 
         footer .contact-info-footer .fab {
             color: var(--naranja-cacahuate);
-            margin-left: 10px;
-            margin-right: 5px;
             font-size: 1.2em;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, color 0.3s ease;
         }
         footer .contact-info-footer a {
             color: var(--naranja-cacahuate);
             text-decoration: none;
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease; /* Asegura la transición del filtro */
         }
         footer .contact-info-footer a:hover {
-            color: var(--blanco-puro);
+            color: var(--blanco-puro); /* CORREGIDO: Cambia a blanco al pasar el ratón */
             transform: scale(1.05);
+            filter: brightness(1.2) saturate(1.2); /* Restaurado: efecto de luminosidad y saturación */
         }
         footer .contact-info-footer .fab:hover {
             transform: scale(1.2);
@@ -392,6 +456,7 @@
             #info-principal-catalogo .contact-info-section {
                 font-size: 1.1em;
                 margin-top: 20px;
+                gap: 6px; /* Ajuste para móviles */
             }
 
             .logo-container {
@@ -441,6 +506,7 @@
             }
             footer .contact-info-footer {
                 font-size: 1em;
+                gap: 6px; /* Ajuste para móviles */
             }
         }
 
@@ -484,17 +550,22 @@
 
     <header>
         <div class="logo-container">
-            <img src="https://i.imgur.com/C9IK8QO.png" alt="Logo de CACAHUATE NATURAL MARKET">
+            <img src="https://i.imgur.com/QPR06jn.png" alt="Logo de CACAHUATE NATURAL MARKET">
         </div>
     </header>
 
     <section id="info-principal-catalogo">
         <h1>Catálogo de Yuyos Medicinales</h1>
-        <p>Descubre el poder de la naturaleza con los yuyos que te ofrece CACAHUATE MARKET, tu destino para el bienestar natural esta aqui en Coronel D' Elia 2039.</p>
+        <p>Descubre el poder de la naturaleza con los yuyos que te ofrece CACAHUATE NATURAL MARKET, tu destino para el bienestar natural esta aqui en Coronel D' Elia 2039, B1822 Lanús, Provincia de Buenos Aires, Argentina.</p>
         <p class="contact-info-section">
-            ¡Contáctanos! <i class="fab fa-whatsapp"></i> <a href="https://wa.me/5491133974550" target="_blank" style="color: var(--naranja-cacahuate); text-decoration: none;">1133974550</a>
+            <span class="contact-text">¡Contáctanos!</span> <i class="fab fa-whatsapp"></i> <a href="https://wa.me/5491133974550" target="_blank" style="color: var(--naranja-cacahuate); text-decoration: none;">1133974550</a>
         </p>
     </section>
+
+    <div class="search-bar-container">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Buscar yuyo por nombre o descripción...">
+    </div>
 
     <main>
         <div class="yuyo-card">
@@ -802,7 +873,7 @@
             </div>
             <div class="yuyo-card-content">
                 <h3>Moringa</h3>
-                <p class="description">Rico en nutrientes, antioxidantes y utilizado como complemento para la salud digestiva y cardiovascular.</p>
+                <p class="description">Rico en nutrientes, antioxidante y antiinflamatorio, usado para fortalecer el sistema inmune y como energizante.</p>
             </div>
         </div>
         
@@ -882,7 +953,7 @@
             </div>
             <div class="yuyo-card-content">
                 <h3>Pulmonaria</h3>
-                <p class="description">Expectorante y emoliente, ideal para afecciones respiratorias como bronquitis, tos y catarros.</p>
+                <p class="description">Expectorante, antiséptico y antitusígeno, ideal para afecciones respiratorias como bronquitis, tos y catarros.</p>
             </div>
         </div>
         
@@ -980,7 +1051,7 @@
 
     <footer>
         <p class="contact-info-footer">
-            ¡Contáctanos! <i class="fab fa-whatsapp"></i> <a href="https://wa.me/5491133974550" target="_blank" style="color: var(--naranja-cacahuate); text-decoration: none;">1133974550</a>
+            <span class="contact-text">¡Contáctanos!</span> <i class="fab fa-whatsapp"></i> <a href="https://wa.me/5491133974550" target="_blank" style="color: var(--naranja-cacahuate); text-decoration: none;">1133974550</a>
         </p>
         <p>En CACAHUATE NATURAL MARKET, creemos en el poder de la naturaleza para tu bienestar.</p>
         <p>© 2025 CACAHUATE NATURAL MARKET. Todos los derechos reservados.</p>
@@ -1005,6 +1076,26 @@
         let isDragging = false; // Tracks if the image is being dragged
         let startX, startY, currentX, currentY, offsetX = 0, offsetY = 0; // For panning calculations
         let currentScale = 1.0; // Initial scale for scroll wheel zoom
+
+        // Funcionalidad de búsqueda
+        const searchInput = document.getElementById('searchInput');
+        const yuyoCards = document.querySelectorAll('.yuyo-card');
+
+        searchInput.addEventListener('keyup', function(event) {
+            const searchTerm = event.target.value.toLowerCase(); // Convertir a minúsculas para búsqueda insensible a mayúsculas
+            
+            yuyoCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('.description').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+
 
         // Loop through all image wrappers and add the click event to open modal
         imageWrappers.forEach(function(wrapper) {
@@ -1151,6 +1242,5 @@
             }
         });
     </script>
-
 </body>
 </html>
